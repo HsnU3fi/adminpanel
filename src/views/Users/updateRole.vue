@@ -79,7 +79,7 @@
     }),
     methods: {
       async submit() {
-        const res = await this.axios.put('https://qrwallshop.paygear.ir/v1/role', {
+        const res = await this.axios.put(`${BASE_URL}v1/role`, {
           id: parseInt(this.$route.params.id),
           name: this.items.name,
           description: this.items.description,
@@ -91,7 +91,7 @@
       },
       async get() {
         console.log(5153151531)
-        const url = 'https://qrwallshop.paygear.ir/v1/role/' + this.$route.params.id;
+        const url = `${BASE_URL}v1/role/` + this.$route.params.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.items = res.data.result;

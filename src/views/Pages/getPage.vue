@@ -197,7 +197,7 @@
 
     methods: {
       async GetPage() {
-        const url = 'https://qrwallshop.paygear.ir/v1/page?page=' + this.page;
+        const url = `${BASE_URL}v1/page?page=` + this.page;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.pages = res.data.result.result;
@@ -209,7 +209,7 @@
         return moment(value).format('jYYYY/jM/jD ساعت HH:mm')
       },
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/page/' + item.id;
+        const url = `${BASE_URL}v1/page/` + item.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.pages2 = [res.data.result];

@@ -108,16 +108,16 @@
 
       },
       async submit() {
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/user', {
-          name: this.name,
-          phone_number: this.phone_number,
-          country_code: 1,
-          addresses: this.inputs,
-          // lat:"",
-          // lng:"",
-          // is_active:"
-        });
         if (res.status === 201) {
+          const res = await this.axios.post(`${BASE_URL}v1/user`, {
+            name: this.name,
+            phone_number: this.phone_number,
+            country_code: 1,
+            addresses: this.inputs,
+            // lat:"",
+            // lng:"",
+            // is_active:"
+          });
           this.alert = true
         }
       },

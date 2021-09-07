@@ -62,7 +62,7 @@
     methods: {
       submit() {
           let mobilePhone = localStorage.getItem('mobilePhone')
-          this.axios.post('https://qrwallshop.paygear.ir/v1/auth/otp/verify', {
+          this.axios.post('${BASE_URL}v1/auth/otp/verify', {
               mobile_phone: mobilePhone,
               otp: this.otpToken
           }).then(function (response) {

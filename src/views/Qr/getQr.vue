@@ -240,7 +240,7 @@
 
     methods: {
       async GetQr() {
-        const url = 'https://qrwallshop.paygear.ir/v1/qr?page=' + this.page;
+        const url = `${BASE_URL}v1/qr?page=` + this.page;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.qr = res.data.result.result;
@@ -255,7 +255,7 @@
 
       },
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/qr/' + item.id;
+        const url = `${BASE_URL}v1/qr/` + item.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.qr2 = [res.data.result];

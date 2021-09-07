@@ -99,7 +99,7 @@
         if (this.is_active === true) {
           this.is_active = 1
         }
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/category', {
+        const res = await this.axios.post(`${BASE_URL}v1/category`, {
           name: this.name,
           parent_id: this.SelectParent,
           is_active: this.is_active
@@ -111,7 +111,7 @@
         }
       },
       async Parent() {
-        const url = 'https://qrwallshop.paygear.ir/v1/category';
+        const url = `${BASE_URL}v1/category`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.parents = res.data.result.result;

@@ -105,7 +105,7 @@
     methods: {
       async AdminSupplier() {
         console.log(1111)
-        const url = 'https://qrwallshop.paygear.ir/v1/user';
+        const url = `${BASE_URL}v1/user`;
         const res = await this.axios.get(url);
         console.log(res)
         if (res.status === 200) {
@@ -113,7 +113,7 @@
         }
       },
       async submit() {
-        const res= await this.axios.put('https://qrwallshop.paygear.ir/v1/supplier', {
+        const res= await this.axios.put(`${BASE_URL}v1/supplier`, {
           id:parseInt(this.$route.params.id),
           name: this.items.name,
           merchant_wallet_id:this.items.merchant_wallet_id,
@@ -125,7 +125,7 @@
         }
       },
       async get() {
-        const url = 'https://qrwallshop.paygear.ir/v1/supplier/' + this.$route.params.id;
+        const url = `${BASE_URL}v1/supplier/` + this.$route.params.id;
         const res = await this.axios.get(url);
         console.log(51651616151652651652)
         if (res.status === 200) {

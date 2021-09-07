@@ -116,7 +116,7 @@
         for (let k in this.item) {
           list.push({address: this.item[k].address});
         }
-        const res = await this.axios.put('https://qrwallshop.paygear.ir/v1/user', {
+        const res = await this.axios.put(`${BASE_URL}v1/user`, {
           id: parseInt(this.$route.params.id),
           name: this.items.name,
           phone_number: this.items.phone_number,
@@ -137,7 +137,7 @@
         }
       },
       async get() {
-        const url = 'https://qrwallshop.paygear.ir/v1/user/' + this.$route.params.id;
+        const url = `${BASE_URL}v1/user/` + this.$route.params.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.items = res.data.result;

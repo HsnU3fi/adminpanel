@@ -225,7 +225,7 @@
 
       },
       async porducts_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/product';
+        const url = `${BASE_URL}v1/product`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.products = res.data.result.result;
@@ -233,7 +233,7 @@
         }
       },
       async category_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/category';
+        const url = `${BASE_URL}v1/category`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.category = res.data.result.result;
@@ -241,7 +241,7 @@
         }
       },
       async group_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/group';
+        const url = `${BASE_URL}v1/group`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.groups = res.data.result.result.Groups;
@@ -250,7 +250,7 @@
         }
       },
       async supplier_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/supplier';
+        const url = `${BASE_URL}v1/supplier`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.supplier = res.data.result.result;
@@ -258,7 +258,7 @@
       },
 
       async submit() {
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/product', {
+        const res = await this.axios.post(`${BASE_URL}v1/product`, {
           name: this.name,
           category_id: this.SelectCategory,
           groups: this.inputs,

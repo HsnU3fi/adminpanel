@@ -85,7 +85,7 @@
         if (this.is_active === false) {
           this.is_active = 0
         }
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/page', {
+        const res = await this.axios.post(`${BASE_URL}v1/page`, {
           title: this.title,
           level: parseInt(this.level),
           is_active: parseInt(this.is_active)

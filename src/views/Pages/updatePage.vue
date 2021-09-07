@@ -87,7 +87,7 @@
         if (this.items.is_active === false) {
           this.items.is_active = 0
         }
-        const res = await this.axios.put('https://qrwallshop.paygear.ir/v1/page', {
+        const res = await this.axios.put(`${BASE_URL}v1/page`, {
           id: parseInt(this.$route.params.id),
           title: this.items.title,
           level: this.items.level,
@@ -98,7 +98,7 @@
         }
       },
       async get() {
-        const url = 'https://qrwallshop.paygear.ir/v1/page/' + this.$route.params.id;
+        const url = `${BASE_URL}v1/page/` + this.$route.params.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.items = res.data.result;

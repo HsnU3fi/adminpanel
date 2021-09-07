@@ -64,7 +64,7 @@
       submit() {
         localStorage.removeItem('mobilePhone')
         localStorage.setItem('mobilePhone', this.mobile_phone)
-        const res= this.axios.post('Https://qrwallshop.paygear.ir/v1/auth/otp', {
+        const res= this.axios.post(`${BASE_URL}v1/auth/otp`, {
           mobile_phone: this.mobile_phone
         });
         if (res.status===undefined) {

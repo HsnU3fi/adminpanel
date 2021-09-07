@@ -79,7 +79,7 @@
     }),
     methods: {
       async submit() {
-        const res= await this.axios.post('https://qrwallshop.paygear.ir/v1/qr', {
+        const res= await this.axios.post(`${BASE_URL}v1/qr`, {
           type:parseInt(this.type) ,
           qr:this.qr,
           value:this.value

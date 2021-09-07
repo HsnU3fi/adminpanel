@@ -190,7 +190,7 @@
     },
     methods: {
       async GetProducts() {
-        const url = 'https://qrwallshop.paygear.ir/v1/product?page=' + this.page;
+        const url = `${BASE_URL}v1/product?page=` + this.page;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.Products = res.data.result.result;
@@ -201,7 +201,7 @@
         return moment(value).format('jYYYY/jM/jD ساعت HH:mm')
       },
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/product/' + item.id;
+        const url = `${BASE_URL}v1/product?page=` + item.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.Products2 = [res.data.result];

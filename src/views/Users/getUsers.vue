@@ -194,7 +194,7 @@
     },
     methods: {
       async GetUsers() {
-        const url = 'https://qrwallshop.paygear.ir/v1/user?page=' + this.page;
+        const url = `${BASE_URL}v1/user?page=` + this.page;
         const res = await this.axios.get(url)
         if (res.status === 200) {
           this.users = res.data.result.result;
@@ -205,7 +205,7 @@
       //   return moment(value).format('jYYYY/jM/jD ساعت HH:mm')
       // },
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/user/' + item.id;
+        const url = `${BASE_URL}v1/user/` + item.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.users2 = [res.data.result];

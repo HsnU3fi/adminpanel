@@ -203,7 +203,7 @@
     },
     methods: {
       async GetSupplier() {
-        const url = 'https://qrwallshop.paygear.ir/v1/supplier?page=' + this.page;
+        const url = `${BASE_URL}v1/supplier?page=` + this.page;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.supplier = res.data.result.result;
@@ -215,7 +215,7 @@
       // },
       //
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/supplier/' + item.id;
+        const url = `${BASE_URL}v1/supplier/` + item.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.supplier2 = [res.data.result];
@@ -224,7 +224,7 @@
           this.loading = false
         }
         if (item.admin_id != null) {
-          const data = await this.axios.get('https://qrwallshop.paygear.ir/v1/user/' + item.admin_id);
+          const data = await this.axios.get(`${BASE_URL}v1/user/` + item.admin_id);
           if (data.status === 200) {
             this.name = data.data.result.name;
           }
@@ -258,7 +258,7 @@
         console.log(15161516)
         console.log(value)
         for (const i in value) {
-          const res = await this.axios.get('https://qrwallshop.paygear.ir/v1/user/' + i);
+          const res = await this.axios.get(`${BASE_URL}v1/user/` + i);
           if (res.status === 200) {
             this.name = res.data.result.name;
             console.log(6516511651616)

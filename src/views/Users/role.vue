@@ -78,7 +78,7 @@
     }),
     methods: {
       async submit() {
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/role', {
+        const res = await this.axios.post(`${BASE_URL}v1/role`, {
           name: this.name,
           description: this.description,
           is_active: this.is_active

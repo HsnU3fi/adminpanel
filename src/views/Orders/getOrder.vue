@@ -188,7 +188,7 @@
     },
     methods: {
       async GetOrders() {
-        const url = 'https://qrwallshop.paygear.ir/v1/order?page=' + this.page;
+        const url = `${BASE_URL}v1/order?page=` + this.page;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.orders = res.data.result.Orders;
@@ -199,7 +199,7 @@
       //   return moment(value).format('jYYYY/jM/jD ساعت HH:mm')
       // },
       async Item(item) {
-        const url = 'https://qrwallshop.paygear.ir/v1/order/' + item.id ;
+        const url = `${BASE_URL}v1/order/` + item.id ;
         const res =await this.axios.get(url);
         if (res.status === 200) {
           this.orders2=[res.data.result];
@@ -208,7 +208,7 @@
           this.loading = false
         }
         if (item.user_id != null) {
-          const data = await this.axios.get('https://qrwallshop.paygear.ir/v1/user/' + item.user_id);
+          const data = await this.axios.get(`${BASE_URL}v1/user/` + item.user_id);
           if (data.status === 200) {
             this.phone_number = data.data.result.phone_number;
           }

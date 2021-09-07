@@ -137,7 +137,7 @@
         for (let i in this.itemPage) {
           listId.push({id: this.itemPage[i].id})
         }
-        const res = await this.axios.put('https://qrwallshop.paygear.ir/v1/group', {
+        const res = await this.axios.put(`${BASE_URL}v1/group`, {
           id: parseInt(this.$route.params.id),
           name: this.items.name,
           pages: listId,
@@ -149,7 +149,7 @@
         }
       },
       async get() {
-        const url = 'https://qrwallshop.paygear.ir/v1/group/' + this.$route.params.id;
+        const url = `${BASE_URL}v1/group` + this.$route.params.id;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.items = res.data.result;
@@ -158,7 +158,7 @@
         }
       },
       async GetPage() {
-        const url = 'https://qrwallshop.paygear.ir/v1/page';
+        const url = `${BASE_URL}v1/page`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.pages = res.data.result.result;

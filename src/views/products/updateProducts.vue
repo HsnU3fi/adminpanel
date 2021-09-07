@@ -236,7 +236,7 @@
 
       },
       async porducts_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/product';
+        const url = `${BASE_URL}v1/product`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.products = res.data.result.result;
@@ -244,7 +244,7 @@
         }
       },
       async category_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/category';
+        const url = `${BASE_URL}v1/category`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.category = res.data.result.result;
@@ -253,14 +253,14 @@
       },
 
       async group_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/group';
+        const url = `${BASE_URL}v1/group`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.groups = res.data.result.result.Groups;
         }
       },
       async supplier_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/supplier';
+        const url = `${BASE_URL}v1/supplier`;
         const res = await this.axios.get(url);
         if (res.status === 200) {
           this.supplier = res.data.result.result;
@@ -286,7 +286,7 @@
             value: this.item_product[i].value
           })
         }
-        const res = await this.axios.put('https://qrwallshop.paygear.ir/v1/product', {
+        const res = await this.axios.put(`${BASE_URL}v1/product`, {
           id: parseInt(this.$route.params.id),
           name: this.items.name,
           category_id: this.items.category_id,
@@ -300,7 +300,7 @@
         }
       },
       async get() {
-          const url = 'https://qrwallshop.paygear.ir/v1/product/' + this.$route.params.id;
+          const url = `${BASE_URL}v1/product/` + this.$route.params.id;
           const res = await this.axios.get(url);
           if (res.status === 200) {
             this.items = res.data.result;

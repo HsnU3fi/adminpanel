@@ -99,7 +99,7 @@
     }),
     methods: {
       async AdminSupplier() {
-        const url = 'https://qrwallshop.paygear.ir/v1/user';
+        const url = `${BASE_URL}v1/user`;
         const res = await this.axios.get(url);
         console.log(res)
         if (res.status === 200) {
@@ -111,7 +111,7 @@
         if (this.address == null) {
           return divar
         }
-        const res = await this.axios.post('https://qrwallshop.paygear.ir/v1/supplier', {
+        const res = await this.axios.post(`${BASE_URL}v1/supplier`, {
           name: this.name,
           merchant_wallet_id: this.merchant_wallet_id,
           address: this.address,

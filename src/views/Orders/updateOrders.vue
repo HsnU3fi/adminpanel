@@ -141,7 +141,7 @@
 
       },
       async porducts_() {
-        const url = 'https://qrwallshop.paygear.ir/v1/product';
+        const url = `${BASE_URL}v1/product`;
         const res = await this.axios.get(url);
         console.log(res)
         if (res.status === 200) {
@@ -150,7 +150,7 @@
         }
       },
       async User() {
-        const url = 'https://qrwallshop.paygear.ir/v1/user';
+        const url = `${BASE_URL}v1/user`;
         const res = await this.axios.get(url);
         console.log(res)
         if (res.status === 200) {
@@ -160,7 +160,7 @@
       },
       async submit() {
         console.log(this.inputs)
-        const res= await this.axios.post('https://qrwallshop.paygear.ir/v1/order', {
+        const res= await this.axios.post(`${BASE_URL}v1/order`, {
           user_id: this.SelectUsers,
           address_id:this.address_id,
           total_amount:parseInt(this.total_amount),
